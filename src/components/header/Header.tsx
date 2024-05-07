@@ -2,7 +2,6 @@
 import { useScroll } from "@/hooks/useScroll";
 import HeaderIcon from "./HeaderIcon";
 import NavBar from "./NavBar";
-import SearchIcon from "./SearchIcon";
 import Image from "next/image";
 import headerBackground from "../../assets/image/header-background.png";
 import Title from "./_components/Title";
@@ -17,7 +16,6 @@ export default function Header() {
                 <header className={`w-full flex justify-between items-center fixed z-20 ${isScroll ? 'bg-white text-black' : 'bg-transparent text-white'} transition-colors ease-in-out`}>
                     <HeaderIcon />
                     <NavBar />
-                    <SearchIcon />
                 </header>
                 <Title />
             </div>

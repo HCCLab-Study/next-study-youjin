@@ -12,6 +12,7 @@ module.exports = {
     extend: {
       colors: {
         'custom-blue': '#5A8BB6',
+        'custom-gray': '#F5F5F5',
       },
       fontFamily: {
         oswald: ["'Oswald'", 'sans-serif']

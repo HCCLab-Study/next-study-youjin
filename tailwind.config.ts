@@ -18,6 +18,7 @@ const config: Config = {
       },
       colors: {
         'custom-blue': '#5A8BB6',
+        'custom-gray': '#F5F5F5',
       }
     },
   },

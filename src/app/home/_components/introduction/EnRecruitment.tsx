@@ -3,7 +3,7 @@ import React from 'react';
 const EnRecruitmentDescription = () => {
     return (
         <div className="flex justify-center mt-12 text-sm">
-            <div className="w-[60vw]">
+            <div className="w-[60vw] mb-12">
                 IDEA Lab. (Interactive Digital Experience Analytics Lab.) conduct <span className='font-bold'>Human-Computer Interaction</span> (HCI) research by designing an interactive
                 computing system from human perspectives. Our main research interests are{' '}
                 <span className='font-bold'>1) UX/CX Research</span> to identify customer pain points,{' '}

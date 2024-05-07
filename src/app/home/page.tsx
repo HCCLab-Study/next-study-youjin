@@ -10,11 +10,15 @@ export default function Page() {
     return (
         <main className="flex flex-col">
             <Introduction />
-            <Recruitment />
-            <ResearchField />
-            <EnRecruitment />
+            <div className="bg-white">
+                <Recruitment />
+                <ResearchField />
+                <EnRecruitment />
+            </div>
             <News />
-            <InstagramNews />
+            <div className="bg-custom-gray">
+                <InstagramNews />
+            </div>
         </main>
     )
 }

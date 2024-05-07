@@ -1,24 +1,37 @@
+import React, { useState } from 'react';
 import Link from "next/link";
 import { MenuItem } from "./_components/MenuItem";
-import { useState } from 'react';
+import SeeMoreMenu from "./SeeMoreMenu";
+import { useHeaderSize } from '@/hooks/useDeviceSize';
+
 
 export default function NavBar() {
     const [selectedItem, setSelectedItem] = useState<string | null>(null);
+    const { showNumber, isShowHamburgerMenu } = useHeaderSize();
+
+    const visibleItems = MenuItem.slice(0, showNumber);
+    const subMenuItems = MenuItem.slice(showNumber);
 
     return (
-        <main className="w-[65vw]">
-            <nav className="p-3 mt-3 flex justify-end items-center">
-                <ul className="flex gap-6">
-                    {MenuItem.map((item) => (
-                        <li key={item.name}
-                            className={`cursor-pointer ${selectedItem === item.name ? 'bg-gray-400' : 'bg-transparent'} text-inherit`}
+        <main className="w-full">
+            <nav className="p-3 flex justify-end items-center">
+                <ul className="flex gap-4">
+                    {visibleItems.map((item, index) => (
+                        <li key={index}
+                            className={`cursor-pointer ${selectedItem === item.name ? 'bg-gray-400' : 'bg-transparent'}`}
                             onClick={() => setSelectedItem(item.name)}>
-                            <Link href={item.href}>
-                                {item.name}
-                            </Link>
+                            <Link href={item.href}>{item.name}</Link>
                         </li>
                     ))}
+                    {subMenuItems.length > 0 && <SeeMoreMenu subMenuItems={subMenuItems} />}
                 </ul>
+                <svg
+                    className="w-[25px] h-[25px] ml-4 mt-1"
+                    viewBox="0 0 24 24"
+                    focusable="false">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                </svg>
             </nav>
         </main>
     );
