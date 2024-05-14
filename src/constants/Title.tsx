@@ -1,6 +1,6 @@
 export default function Title() {
     return (
-        <div className="h-[70vh] w-full text-white flex flex-col items-center justify-center font-oswald">
+        <div className="h-[70vh] w-full text-white flex flex-col items-center justify-center font-oswaldMedium">
             <div className="text-7xl">
                 <span className="font-bold">I</span>nteractive{" "} 
                 <span className="font-bold">D</span>igital{" "}

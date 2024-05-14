@@ -1,13 +1,15 @@
-import { useEffect, useState } from "react";
-import { MenuItem } from "./_components/MenuItem";
-import SubMenu from "./SubMenu";
+import { useState } from "react";
+import { MenuItem } from "@/constants/MenuItem";
+import SeeMoreBar from "./SeeMoreBar";
 
 type Props = {
     subMenuItems: MenuItem[];
+    selectedItem: string | null;
+    setSelectedItem: (item: string | null) => void;
 };
-
-export default function SeeMoreMenu({ subMenuItems }: Props) {
+export default function SeeMoreMenu({ subMenuItems, selectedItem, setSelectedItem }: Props) {
     const [active, setActive] = useState(false);
+
 
     const onActiveMenu = () => {
         setActive(!active);
@@ -17,8 +19,14 @@ export default function SeeMoreMenu({ subMenuItems }: Props) {
     return (
         <>
             <li className="flex relative" onClick={onActiveMenu}>
-                <p>더보기</p>
-                {active && <SubMenu menuItems={subMenuItems} />}
+                <p className="cursor-pointer">더보기</p>
+                {active && (
+                    <SeeMoreBar
+                        menuItems={subMenuItems}
+                        selectedItem={selectedItem}
+                        setSelectedItem={setSelectedItem}
+                    />
+                )}
             </li>
         </>
     );
