@@ -4,7 +4,7 @@ import HeaderIcon from "./_icons/HeaderIcon";
 import NavBar from "./NavBar";
 import Title from "@/constants/Title";
 import BackgroundImage from "./_components/BackgroundImage";
-import HamburgerMenu from "./HamburgerMenu";
+import HamburgerMenu from "./_icons/HamburgerIcon";
 import { MenuItem } from "@/constants/MenuItem";
 import { useState } from "react";
 

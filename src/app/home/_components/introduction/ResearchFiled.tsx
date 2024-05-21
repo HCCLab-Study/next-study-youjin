@@ -21,18 +21,18 @@ export const applicationDomain = {
 
 export default function ResearchField() {
     return (
-        <div className="flex justify-center gap-12 mt-16">
-            <div>
+        <div className="flex justify-center gap-4 mt-16 ml-12">
+            <div className="w-[350px]">
                 <div className="font-semibold">{researchScope.title}</div>
-                <ul className="list-disc ml-1 p-3 text-sm w-[28vw]">
+                <ul className="list-disc ml-1 p-3 text-sm">
                     {researchScope.items.map((item, index) => (
                         <li key={index} className="p-1">{item}</li>
                     ))}
                 </ul>
             </div>
-            <div>
+            <div className="w-[350px]">
                 <div className="font-semibold">{applicationDomain.title}</div>
-                <ul className="list-disc ml-1 p-3 text-sm w-[28vw]">
+                <ul className="list-disc ml-1 p-3 text-sm">
                     {applicationDomain.items.map((item, index) => (
                         <li key={index} className="p-1">{item}</li>
                     ))}

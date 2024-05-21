@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useHeaderSize } from '@/hooks/useDeviceSize';
 import { MenuItem } from '@/constants/MenuItem';
 import Link from "next/link";
-import SeeMoreMenu from "./SeeMoreMenu";
+import SeeMoreMenu from "./_icons/SeeMoreIcon";
 import SearchIcon from './_icons/SearchIcon';
 
 type Props = {

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { MenuItem } from "@/constants/MenuItem";
-import SeeMoreBar from "./SeeMoreBar";
+import SeeMoreBar from "../SeeMoreBar";
 
 type Props = {
     subMenuItems: MenuItem[];
